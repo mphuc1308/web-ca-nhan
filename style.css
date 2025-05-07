@@ -1,0 +1,146 @@
+/* Body và Background với màu đen và hiệu ứng neon */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.profile {
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: fadeIn 1.2s ease-in-out;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+.bio {
+  font-size: 1.2em;
+  color: #f0f0f0;
+  font-weight: 400;
+  margin-top: 5px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Các ô mục */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hiệu ứng ánh sáng neon */
+@keyframes neonGlow {
+  0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+  50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; }
+  100% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+}
+
+h1, .card {
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.info-container {
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+.lienquan-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.lienquan-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.lienquan-img:hover {
+  transform: scale(1.1);
+}
+
+.lienquan-img:focus {
+  outline: none;
+}
+
+/* Khi click vào ảnh, phóng to ảnh */
+.lienquan-img.enlarged {
+  transform: scale(2.5);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Khi phóng to ảnh */
+.enlarged-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
